@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Health Assistant -Talk To Me</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+<main class="container">
+<nav class="navbar-main">
+    <div class="nav-left">
+        <a href="/" class="brand">
+            <img src="/static/logo.svg" class="brand-logo">
+            <span class="brand-text">ConnectCare</span>
+        </a>
+    </div>
+
+    <div class="nav-right">
+        <a href="/">Home</a>
+        <a href="/symptoms">Symptoms Tracker</a>
+        <a href="/community">Community</a>
+        <button class="login-btn">Login</button>
+    </div>
+</nav>
+
+    <h1 class="title-line">
+    Health Assistant - Talk to me
+    <img src="/static/happy.svg" class="happy-inline" alt="">
+</h1>
+
+    <p class="disclaimer">I am not a doctor. This assistant provides general information only.</p>
+
+    <textarea id="userInput" rows="5" placeholder="Describe your symptoms or ask a health question..."></textarea>
+    <div class="row">
+        <button id="sendBtn">Ask</button>
+    </div>
+
+    <div id="responseArea" class="response"></div>
+</main>
+<footer class="footer">
+    Community Connect © 2025 Nov
+</footer>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

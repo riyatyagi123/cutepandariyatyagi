@@ -1,0 +1,62 @@
+# -------------------------
+# Python / Flask
+# -------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+
+# Exclude local SQLite DB
+symptoms.db
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+
+# Instance folder (Flask user data)
+instance/
+
+# -------------------------
+# Environment Variables
+# -------------------------
+.env
+.env.*
+!.env.example
+
+# -------------------------
+# VS Code + System files
+# -------------------------
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+logs/
+log.txt
+
+# -------------------------
+# Node (if used in static folder)
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+# -------------------------
+# Build / Temp Files
+# -------------------------
+dist/
+build/
+*.tmp
+*.swp
+*.swo

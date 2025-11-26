@@ -1,0 +1,295 @@
+/* =========================================
+   Dark Pink Theme — Full Final style.css
+   - Fixed footer placement (always bottom)
+   - Container grows to fill viewport height
+   - Clean and consistent UI
+   ========================================= */
+
+/* -------- Color tokens (dark-pink palette) -------- */
+:root {
+  --pink-dark:   #970747;
+  --pink-mid:    #d14b82;
+  --pink-light:  #fce6ef;
+  --pink-hover:  #b50958;
+  --text:        #2b0b18;
+  --muted:       #7f5a6e;
+  --card-bg:     #ffffff;
+  --soft-border: #f2c9d8;
+  --danger:      #d95375;
+  --glass:       rgba(151, 7, 71, 0.08);
+  --shadow:      rgba(151, 7, 71, 0.15);
+}
+
+/* -------- Reset & global layout -------- */
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main layout fix: column layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--pink-light);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* -------- Fixed top navbar -------- */
+.navbar-main {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 28px;
+  background: var(--card-bg);
+  border-bottom: 1px solid rgba(151,7,71,0.07);
+  box-shadow: 0 4px 14px var(--shadow);
+  backdrop-filter: blur(4px);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand { display:flex; align-items:center; gap:10px; }
+.brand-logo { width:40px; height:40px; border-radius:10px; }
+.brand-text { font-size:1.2rem; font-weight:700; color:var(--pink-dark); }
+
+/* Right nav links */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-right a {
+  padding: 8px 14px;
+  background: var(--pink-light);
+  color: var(--pink-dark);
+  border-radius: 8px;
+  border: 1px solid var(--soft-border);
+  font-weight: 600;
+  transition: 0.16s ease;
+}
+.nav-right a:hover {
+  background: #fbd3e2;
+  border-color: var(--pink-mid);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(151,7,71,0.04);
+}
+
+/* Login button */
+.login-btn {
+  padding: 8px 18px;
+  background: linear-gradient(180deg, var(--pink-mid), var(--pink-dark));
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.16s ease;
+}
+.login-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(151,7,71,0.12);
+}
+
+/* Mobile toggle */
+.nav-toggle { display:none; }
+
+/* -------- Main container spacing -------- */
+main.container {
+  flex: 1 1 auto;
+  width: 96%;
+  max-width: 1350px;
+  margin: 86px auto 20px; /* pushes below navbar */
+  padding: 24px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(151,7,71,0.03);
+}
+
+@media (max-width: 800px) {
+  main.container {
+    width: 94%;
+    margin: 78px auto 16px;
+    padding: 14px;
+  }
+}
+
+/* -------- Form controls -------- */
+textarea, input, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--soft-border);
+  background: linear-gradient(180deg, var(--pink-light), #ffffff);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+textarea { resize: vertical; min-height: 80px; }
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--pink-dark);
+  box-shadow: 0 0 6px rgba(151,7,71,0.22);
+}
+
+/* -------- Buttons -------- */
+button {
+  padding: 10px 18px;
+  background: linear-gradient(180deg, var(--pink-mid), var(--pink-dark));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px var(--glass);
+  transition: 0.12s;
+  font-weight: 600;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(151,7,71,0.07);
+}
+
+button.secondary {
+  background: #fff5fa;
+  color: var(--pink-dark);
+  border: 1px solid var(--soft-border);
+  box-shadow: none;
+}
+
+/* -------- Response box -------- */
+.response {
+  margin-top: 20px;
+  background: linear-gradient(180deg, #fff8fb, #fff5f8);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--soft-border);
+}
+
+.meta { color: var(--muted); }
+
+/* -------- Card -------- */
+.card {
+  background: var(--card-bg);
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(151,7,71,0.04);
+  margin-bottom: 16px;
+  border: 1px solid var(--soft-border);
+}
+
+/* -------- Tracker grid -------- */
+.tracker-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Symptom items */
+.symptom-card {
+  background: linear-gradient(180deg,#fff8fb,#ffffff);
+  padding: 12px;
+  border-left: 4px solid var(--pink-dark);
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+.symptom-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.sev-pill {
+  background: linear-gradient(180deg,#fde2ec,#fcd1e4);
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--pink-dark);
+}
+
+.delete-btn {
+  background:#fff6f6;
+  border:1px solid rgba(217,83,117,0.14);
+  padding:6px 8px;
+  border-radius:6px;
+  cursor:pointer;
+  color: var(--danger);
+}
+
+/* -------- Community layout -------- */
+.community-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 900px) {
+  .community-grid {
+    grid-template-columns: 360px 1fr;
+  }
+}
+
+/* Posts */
+.post-card {
+  background: linear-gradient(180deg,#fff8fb,#ffffff);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #f7e9ef;
+  margin-bottom: 12px;
+}
+
+/* Comments */
+.comment-block {
+  margin-top:8px;
+  padding:8px;
+  border-radius:8px;
+  background:#fff7f8;
+  border:1px solid #f6e9ec;
+}
+
+/* -------- Footer (fixed bottom layout) -------- */
+.footer {
+  margin: 10px auto 30px;
+  padding: 16px 20px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--pink-dark);
+  background: #fff4fa;
+  border-top: 1px solid var(--soft-border);
+  border-radius: 10px;
+  width: calc(100% - 48px);
+  max-width: 1350px;
+  box-shadow: 0 6px 16px rgba(151,7,71,0.03);
+}
+
+/* -------- Utilities -------- */
+.row { display:flex; gap:8px; align-items:center; }
+.small { font-size:0.85rem; color:var(--muted); }
+.muted { color:var(--muted); }
+
+.title-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;   /* spacing between text and icon */
+}
+
+.happy-inline {
+  width: 42px;     /* adjust size */
+  height: 42px;
+}

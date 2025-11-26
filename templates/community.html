@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Community — Llama Health Assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main class="container">
+<nav class="navbar-main">
+    <div class="nav-left">
+        <a href="/" class="brand">
+            <img src="/static/logo.svg" class="brand-logo">
+            <span class="brand-text">ConnectCare</span>
+        </a>
+    </div>
+
+    <div class="nav-right">
+        <a href="/">Home</a>
+        <a href="/symptoms">Symptoms Tracker</a>
+        <a href="/community">Community</a>
+        <button class="login-btn">Login</button>
+    </div>
+</nav>
+
+
+
+  <h1>Community</h1>
+  <p class="muted">Share experiences, ask for tips, and support each other. Be respectful — this is not medical advice.</p>
+
+  <div class="community-grid">
+    <aside class="card side">
+      <h2>Your account</h2>
+      <div id="authArea">
+        <input id="username" placeholder="username">
+        <input id="password" type="password" placeholder="password">
+        <div class="row">
+          <button id="registerBtn">Register</button>
+          <button id="loginBtn" class="secondary">Login</button>
+        </div>
+        <div id="whoami" class="muted" style="margin-top:8px;"></div>
+      </div>
+
+      <hr style="margin:16px 0;">
+      <h2>Create a post</h2>
+      <textarea id="postContent" rows="5" placeholder="Share how you're feeling or ask a question..."></textarea>
+      <div class="row">
+        <button id="createPostBtn">Post</button>
+        <button id="refreshBtn" class="secondary">Refresh</button>
+      </div>
+
+      <small class="muted">Posts are public within this app (prototype). For production add moderation & auth.</small>
+    </aside>
+
+    <section class="card main">
+      <h2>Recent posts</h2>
+      <div id="postsArea"></div>
+    </section>
+  </div>
+
+</main>
+<footer class="footer">
+    Community Connect © 2025 Nov
+</footer>
+
+<script src="/static/community.js"></script>
+</body>
+</html>

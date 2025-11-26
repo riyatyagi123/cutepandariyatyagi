@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Symptoms Tracker — Enhanced</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<main class="container">
+<nav class="navbar-main">
+    <div class="nav-left">
+        <a href="/" class="brand">
+            <img src="/static/logo.svg" class="brand-logo">
+            <span class="brand-text">ConnectCare</span>
+        </a>
+    </div>
+
+    <div class="nav-right">
+        <a href="/">Home</a>
+        <a href="/symptoms">Symptoms Tracker</a>
+        <a href="/community">Community</a>
+        <button class="login-btn">Login</button>
+    </div>
+</nav>
+
+  <h1>Symptoms Tracker</h1>
+  <p class="muted">Log symptoms, rate severity, view history, export data, or ask the assistant to analyze your recent entries.</p>
+
+  <section class="tracker-grid">
+    <div class="card">
+      <h2>Add symptom</h2>
+
+      <label>Symptom</label>
+      <input id="symptomName" placeholder="e.g., headache">
+
+      <label>Severity: <span id="sevVal">5</span>/10</label>
+      <input type="range" id="symptomSeverity" min="1" max="10" value="5">
+
+      <label>Notes (optional)</label>
+      <textarea id="symptomNotes" rows="3" placeholder="When, what makes it better/worse..."></textarea>
+
+      <div class="row">
+        <button id="addSymptomBtn">Add</button>
+        <button id="analyzeBtn" class="secondary">Analyze Recent</button>
+        <button id="exportBtn" class="secondary">Export CSV</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Severity over time</h2>
+      <canvas id="severityChart" height="180"></canvas>
+      <small class="muted">Shows last 12 entries.</small>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>History</h2>
+    <div id="symptomList" class="symptom-list"></div>
+  </section>
+
+  <section class="card" id="analysisCard" style="display:none;">
+    <h2>AI Analysis</h2>
+    <div id="analysisResult" class="formatted"></div>
+  </section>
+
+</main>
+<footer class="footer">
+    Community Connect © 2025 Nov
+</footer>
+
+<script src="/static/symptoms.js"></script>
+</body>
+</html>
